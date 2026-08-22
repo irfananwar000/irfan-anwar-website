@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+h2 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+
 
 html {
     scroll-behavior: smooth;
