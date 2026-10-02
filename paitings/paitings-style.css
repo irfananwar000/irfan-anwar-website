@@ -302,3 +302,29 @@ body {
         }
     }
 }
+
+
+/* Mobile Responsive Fixes (Without changing desktop view) */
+@media (max-width: 767.98px) {
+    .gallery-row-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .gallery-row-container .gallery-row-item {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .gallery-row-container .gallery-row-item .img-box {
+        height: auto !important;
+        width: 100% !important;
+        max-height: 380px !important;
+    }
+
+    .gallery-row-container .gallery-row-item .img-box img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
