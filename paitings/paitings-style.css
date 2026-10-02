@@ -1,108 +1,347 @@
-/* General Font & Styling */
-html {
-    scroll-behavior: smooth;
-}
-
+/* 
 body {
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
+    overflow: hidden; 
 }
 
-/* Header Styles - Fixed at the top */
-.site-header {
+.horizontal-gallery-container {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 92px;
-    background-color: rgba(255, 255, 255, 0.98);
-    z-index: 1050;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 40px 150px 40px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 4px;
+        
+        &:hover {
+            background: #555;
+        }
+    }
+
+    .horizontal-track {
+        display: inline-flex;
+        gap: 50px;
+        align-items: flex-end; 
+
+        .horizontal-item {
+            display: inline-block;
+            flex-shrink: 0;
+            background: transparent;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 55vh;
+                object-fit: contain;
+                display: block;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
+            }
+
+            .painting-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-top: 15px;
+                font-family: 'Montserrat', sans-serif;
+                white-space: normal;
+
+                .painting-main-details {
+                    .painting-title {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #111;
+                        margin-bottom: 2px;
+                    }
+
+                    .painting-size {
+                        font-size: 0.75rem;
+                        color: #777;
+                    }
+                }
+
+                .painting-status {
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+
+                    &.available {
+                        color: #2b7a0b;
+                        background: #eaf5e6;
+                    }
+
+                    &.sold {
+                        color: #a94442;
+                        background: #fdf7f7;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.brand-text {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #333333;
+.gallery-heading {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+} */
+
+
+
+
+
+
+/* Modern CSS Nesting */
+/* .masonry-gallery {
+    column-count: 4;
+    column-gap: 20px;
+
+    @media (max-width: 992px) {
+        column-count: 2;
+    }
+
+    @media (max-width: 576px) {
+        column-count: 1;
+    }
+
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+.painting-title {
+    font-family: 'Montserrat', sans-serif;
+} */
+
+
+
+
+
+/* Gallery Heading Style */
+.gallery-heading {
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
 }
 
-.nav-link-custom {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #333333;
-    text-decoration: none;
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-.nav-link-custom:hover, 
-.nav-link-custom.active {
-    border-bottom: 2px solid #333333;
-}
-
-.cart-icon {
+/* Uniform Height Gallery Rows Layout */
+.gallery-row-container {
     display: flex;
-    align-items: center;
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+
+    .gallery-row-item {
+        height: 340px;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .img-box {
+            height: 260px;
+            width: auto;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: auto;
+                max-width: none;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        .painting-info {
+            padding: 10px 0px;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            flex-grow: 1;
+
+            .painting-main-details {
+                .painting-title {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: #111;
+                    margin-bottom: 2px;
+                }
+
+                .painting-size {
+                    font-size: 0.75rem;
+                    color: #777;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .painting-status {
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 2px 6px;
+                border-radius: 3px;
+
+                &.available {
+                    color: #2b7a0b;
+                    background: #eaf5e6;
+                }
+
+                &.sold {
+                    color: #a94442;
+                    background: #fdf7f7;
+                }
+            }
+        }
+    }
 }
 
-/* Mobile Menu Adjustments */
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-/* Carousel container - Exactly 110px header ke baad full viewport height */
-#fullscreenCarousel {
-    margin-top: 92px;
-    height: calc(100vh - 92px);
-    min-height: calc(100vh - 92px);
-    width: 100vw;
-}
-
-.carousel-inner, 
-.carousel-item {
-    height: 100%;
-    min-height: 100%;
-}
-
-/* Images ko proper fit karne ke liye */
-.carousel-item img {
+/* Painting Lightbox Modal Styles */
+.painting-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transform: scale(1);
-    transition: transform 6s ease-in-out;
-}
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
 
-.carousel-item.active img {
-    transform: scale(1.08);
-}
+    &.active {
+        display: flex;
+    }
 
-/* Customizing indicator dots */
-.carousel-indicators {
-    z-index: 5;
-    margin-bottom: 1.5rem;
-}
+    .modal-content-wrapper {
+        background: #fff;
+        max-width: 800px;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-.carousel-indicators [data-bs-target] {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: none;
-}
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            z-index: 10;
+            background: #fff;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.2s;
 
-.carousel-indicators .active {
-    background-color: #ffffff;
+            &:hover {
+                background: #f1f1f1;
+            }
+        }
+
+        .modal-img-container {
+            width: 100%;
+            max-height: 60vh;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+                max-height: 60vh;
+                object-fit: contain;
+                display: block;
+            }
+        }
+
+        .modal-info {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+
+            .modal-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #111;
+                margin-bottom: 2px;
+            }
+
+            .modal-size {
+                font-size: 0.85rem;
+                color: #777;
+            }
+
+            .modal-status {
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 4px 10px;
+                border-radius: 4px;
+
+                &.available {
+                    color: #2b7a0b;
+                    background: #eaf5e6;
+                }
+
+                &.sold {
+                    color: #a94442;
+                    background: #fdf7f7;
+                }
+            }
+        }
+    }
 }
