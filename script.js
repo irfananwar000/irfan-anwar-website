@@ -1,17 +1,25 @@
-// Wait for DOM to fully load
-document.addEventListener('DOMContentLoaded', function () {
-    const myCarousel = document.getElementById('fullscreenCarousel');
+document.addEventListener("DOMContentLoaded", function () {
+    // Check karein ki hum subfolder (paitings) mein hain ya root par
+    let isInSubfolder = window.location.pathname.includes("/paitings/");
+    let headerPath = isInSubfolder ? "../components/main-header.html" : "components/main-header.html";
 
-    // Initialize Bootstrap Carousel with pause: false so it never pauses on hover
-    const carousel = new bootstrap.Carousel(myCarousel, {
-        interval: 5000,
-        ride: 'carousel',
-        pause: false,
-        touch: true
-    });
+    fetch(headerPath)
+        .then(response => response.text())
+        .then(data => {
+            const headerPlaceholder = document.getElementById("header-placeholder");
+            if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = data;
 
-    // Optional: Log slide change event for debugging
-    myCarousel.addEventListener('slide.bs.carousel', function (event) {
-        console.log('Transitioning to slide index: ' + event.to);
-    });
+                // Active link highlight logic
+                let currentPath = window.location.pathname;
+                if (currentPath.includes("paintings.html")) {
+                    let paintingsLink = document.getElementById("nav-paintings");
+                    if (paintingsLink) paintingsLink.classList.add("active");
+                } else {
+                    let homeLink = document.getElementById("nav-home");
+                    if (homeLink) homeLink.classList.add("active");
+                }
+            }
+        })
+        .catch(error => console.error("Error loading header:", error));
 });
