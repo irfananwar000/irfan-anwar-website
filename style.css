@@ -107,3 +107,35 @@ body {
 .carousel-indicators .active {
     background-color: #ffffff;
 }
+
+/* Mobile Menu Icon Toggle Styles */
+.navbar-toggler .menu-close-icon {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .menu-open-icon {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .menu-close-icon {
+    display: inline-block;
+}
+
+
+/* Mobile Menu Responsive Fix */
+@media (max-width: 767.98px) {
+    .site-header {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .site-header .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
