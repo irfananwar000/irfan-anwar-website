@@ -56,6 +56,10 @@ main {
     gap: 100px;
 }
 
+.about-text, .about-image {
+    width: 100%;
+}
+
 /* Mobile responsive adjustments */
 @media (max-width: 992px) {
     .container {

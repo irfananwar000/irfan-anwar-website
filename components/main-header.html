@@ -1,17 +1,14 @@
-<!-- Header Overlay -->
+
 <header class="site-header fixed-top w-100 py-3 px-4">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         
-        <!-- Brand Name -->
         <a href="/" class="navbar-brand brand-text text-decoration-none">
             <img src="../../images/fav-logo.jpg" alt="Logo" class="brand-logo ms-2" style="height: 70px; "> Irfan Anwar
         </a>
 
-        <!-- Navigation (Desktop) - 992px ke baad dikhega -->
         <nav class="d-none d-lg-flex align-items-center gap-4">
             <a href="/" class="nav-link-custom" id="nav-home">Home</a>
-            
-            <!-- Paintings Dropdown Menu (Desktop) -->
+           
             <div class="nav-item dropdown dropdown-hover">
                 <a href="/paitings/canvas-paintings/paintings.html" class="nav-link-custom dropdown-toggle text-dark text-decoration-none desktop-paintings-toggle d-inline-flex align-items-center gap-1" id="nav-paintings" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>Paintings</span>
@@ -20,70 +17,63 @@
                 <ul class="dropdown-menu shadow-sm border-0 mt-4">
                     <li><a class="dropdown-item py-2" href="/paitings/canvas-paintings/">Canvas Paintings</a></li>
                     <li><a class="dropdown-item py-2" href="/paitings/blackink/">Blackink on Paper</a></li>
-                    <!-- <li><a class="dropdown-item py-2" href="/paitings/sketch/sketch.html">Sketch / Drawings</a></li> -->
                     <li><a class="dropdown-item py-2" href="/paitings/digital-paintings/">Digital Paintings</a></li>
                 </ul>
             </div>
 
             <a href="#" class="nav-link-custom">Photography</a>
-            <a href="/about/" class="nav-link-custom">About</a>
+            <a href="#" class="nav-link-custom">About</a>
             <a href="#" class="nav-link-custom contact">Contact</a>
-            <a href="https://www.instagram.com/irfananwarartist/" class="nav-link-custom"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/irfan.anwar.579893" class="nav-link-custom"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://x.com/irfanartist000" class="nav-link-custom"><i class="fa-brands fa-twitter"></i></a>
+            <span class="pipe">|</span>
+            <a href="https://www.instagram.com/irfananwarartist/" target="_blank" class="nav-link-custom"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/irfan.anwar.579893" target="_blank" class="nav-link-custom"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/irfanartist000" target="_blank" class="nav-link-custom"><i class="fa-brands fa-twitter"></i></a>
         </nav>
 
-        <!-- Mobile Menu Toggle Button - 992px tak dikhega -->
         <button class="navbar-toggler d-lg-none text-dark shadow-none p-0 fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars menu-open-icon"></i>
             <i class="fa-solid fa-xmark menu-close-icon"></i>
         </button>
     </div>
 
-    <!-- Mobile Collapsed Menu -->
     <div class="collapse navbar-collapse d-lg-none bg-white p-3 shadow-sm" id="navbarNav">
         <div class="navbar-nav gap-2">
             <a href="/" class="nav-link px-2 py-2 text-dark border-bottom">Home</a>
             
-            <!-- Mobile Paintings Dropdown -->
             <div class="border-bottom py-2">
                 <div class="d-flex justify-content-between align-items-center px-2 py-1 mobile-paintings-toggle" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#mobilePaintingsSubmenu" aria-expanded="false">
                     <span class="text-dark">Paintings</span>
                     <i class="fa-solid fa-chevron-down small arrow-icon"></i>
                 </div>
                 
-                <!-- Submenu (Initially Hidden) -->
                 <div class="collapse mt-1" id="mobilePaintingsSubmenu">
                     <div class="ps-3 d-flex flex-column gap-1 py-1">
                         <a href="/paitings/canvas-paintings/" class="text-secondary text-decoration-none small py-1">↳ Canvas Paintings</a>
                         <a href="/paitings/blackink/" class="text-secondary text-decoration-none small py-1">↳ Blackink on Paper</a>
-                        <!-- <a href="/paitings/sketch/sketch.html" class="text-secondary text-decoration-none small py-1">↳ Sketch / Drawings</a> -->
                         <a href="/paitings/digital-paintings/" class="text-secondary text-decoration-none small py-1">↳ Digital Paintings</a>
                     </div>
                 </div>
             </div>
 
             <a href="#" class="nav-link px-2 py-2 text-dark border-bottom">Photography</a>
-            <a href="/about/" class="nav-link px-2 py-2 text-dark border-bottom">About</a>
+            <a href="#" class="nav-link px-2 py-2 text-dark border-bottom">About</a>
             <a href="#" class="nav-link px-2 py-2 text-dark border-bottom">Contact</a>
             <div class="nav-link px-2 py-2 text-dark social-media-link">
-                <a href="https://www.instagram.com/irfananwarartist/" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/irfan.anwar.579893" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://x.com/irfanartist000" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/irfananwarartist/" target="_blank" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/irfan.anwar.579893" target="_blank" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/irfanartist000" target="_blank" class="nav-link px-2 py-2 text-dark"><i class="fa-brands fa-twitter"></i></a>
             </div>
             
         </div>
     </div>
 </header>
 
-<!-- CSS Style for Both Desktop & Mobile Arrow Rotation -->
 <style>
-    /* Bootstrap default dropdown arrow ko hide kiya hai */
+    
     .desktop-paintings-toggle::after {
         display: none !important;
     }
 
-    /* Desktop Arrow Rotation */
     .desktop-paintings-toggle[aria-expanded="true"] .desktop-arrow-icon {
         transform: rotate(180deg);
         transition: transform 0.3s ease;
@@ -92,7 +82,6 @@
         transition: transform 0.3s ease;
     }
 
-    /* Mobile Arrow Rotation */
     .mobile-paintings-toggle[aria-expanded="true"] .arrow-icon {
         transform: rotate(180deg);
         transition: transform 0.3s ease;

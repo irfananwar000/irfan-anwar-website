@@ -41,21 +41,11 @@ body {
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
+}
 
-    &.contact {
-        padding-right: 20px;
-
-        &::after {
-            content: "";
-            background-color: #3f4346;
-            height: 18px;
-            width: 1px;
-            position: absolute;
-            margin: 0px 22px;
-            top: 34px;
-        }
-
-    }
+span.pipe {
+    top: -3px;
+    position: relative;
 }
 
 .nav-link-custom:hover, 
