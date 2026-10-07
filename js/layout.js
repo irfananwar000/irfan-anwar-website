@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const headInjection = `
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Irfan Anwar - Visual Artist, Creative Designer & Filmmaker</title>
+        <meta name="description" content="Official portfolio of Irfan Anwar, featuring visual arts, canvas paintings, digital art, black ink drawings, photography, and experimental films.">
+        <meta name="keywords" content="Irfan Anwar, irfan anwar, irfananwar,Irfan Anwar artist, visual artist, creative designer, filmmaker, art portfolio, irfananwar.com">
+        <meta name="author" content="Irfan Anwar">
         <link rel="icon" type="image/png" href="${faviconPath}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
