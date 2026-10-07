@@ -10,28 +10,28 @@
 
   <!-- Paintings Page -->
   <url>
-    <loc>https://irfananwar.com/paintings.html</loc>
+    <loc>https://irfananwar.com/paintings/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blackink Page -->
   <url>
-    <loc>https://irfananwar.com/blackink.html</loc>
+    <loc>https://irfananwar.com/paitings/blackink/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Sketches Page -->
   <url>
-    <loc>https://irfananwar.com/sketch.html</loc>
+    <loc>https://irfananwar.com/paitings/sketch/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Digital Art Page -->
   <url>
-    <loc>https://irfananwar.com/digital.html</loc>
+    <loc>https://irfananwar.com/paitings/digital/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

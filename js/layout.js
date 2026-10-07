@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    let isInSubfolder = window.location.pathname.includes("/paitings/");
-    // let isInSubfolder = window.location.pathname.includes("/paitings/") || window.location.pathname.includes("/paintings/") || window.location.pathname.includes("/digital-paintings/");
+    let isInSubfolder = window.location.pathname.includes("/paitings/") || window.location.pathname.includes("/paintings/");
     let cssPath = isInSubfolder ? "../../style.css" : "style.css";
     let headerPath = isInSubfolder ? "../../components/main-header.html" : "components/main-header.html";
     
@@ -15,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const headInjection = `
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Irfan Anwar - Visual Artist, Creative Designer & Filmmaker</title>
-        <meta name="description" content="Official portfolio of Irfan Anwar, featuring visual arts, canvas paintings, digital art, black ink drawings, photography, and experimental films.">
+        <title>Irfan Anwar</title>
+        <meta name="description" content="Hey I am an artist and based in India.">
         <meta name="keywords" content="Irfan Anwar, irfan anwar, irfananwar,Irfan Anwar artist, visual artist, creative designer, filmmaker, art portfolio, irfananwar.com">
         <meta name="author" content="Irfan Anwar">
         <link rel="icon" type="image/png" href="${faviconPath}">
@@ -29,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Dynamic Title set karne ke liye
     let path = window.location.pathname;
-    if (path.includes("blackink.html")) {
+    if (path.includes("blackink")) {
         document.title = "Irfan Anwar - Blackink on Paper";
-    } else if (path.includes("paintings.html")) {
+    } else if (path.includes("paintings")) {
         document.title = "Irfan Anwar - Canvas Paintings";
-    } else if (path.includes("sketch.html")) {
+    } else if (path.includes("sketch")) {
         document.title = "Irfan Anwar - Sketches";
-    } else if (path.includes("digital.html")) {
+    } else if (path.includes("digital")) {
         document.title = "Irfan Anwar - Digital Paintings";
     } else {
         document.title = "Irfan Anwar";
