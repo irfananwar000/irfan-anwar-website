@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (path.includes("digital.html")) {
         document.title = "Irfan Anwar - Digital Paintings";
     } else {
-        document.title = "Irfan Anwar - Art Gallery";
+        document.title = "Irfan Anwar";
     }
 
     // Header placeholder aur fetch ka code
