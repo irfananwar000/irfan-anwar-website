@@ -3,14 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    let isInSubfolder = window.location.pathname.includes("/paitings/") || window.location.pathname.includes("/paintings/");
-    let cssPath = isInSubfolder ? "../../style.css" : "style.css";
-    let headerPath = isInSubfolder ? "../../components/main-header.html" : "components/main-header.html";
+    // Dynamic approach: pathname ko split karke check karte hain ki hum root par hain ya kisi subfolder mein
+    const pathSegments = window.location.pathname.split('/').filter(segment => segment.length > 0);
     
-    // Agar subfolder me hain toh favicon ka path bhi adjust hoga
-    let faviconPath = isInSubfolder ? "../../images/fav-logo.jpg" : "images/fav-logo.jpg";
+    // Agar path mein 1 ya usse zyada segments hain (jaise /about/ ya /paintings/canvas/), toh hum subfolder mein hain
+    let isInSubfolder = pathSegments.length > 0;
+    
+    // Agar root par hain toh path blank ya sirf index.html hoga
+    let prefix = isInSubfolder ? "../".repeat(pathSegments.length) : "";
 
-    // Head me Bootstrap, Global CSS, aur Favicon inject hoga
+    let cssPath = prefix + "style.css";
+    let headerPath = prefix + "components/main-header.html";
+    let faviconPath = prefix + "images/fav-logo.jpg";
+
     const headInjection = `
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,21 +31,21 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.head.insertAdjacentHTML('beforeend', headInjection);
 
-    // Dynamic Title set karne ke liye
     let path = window.location.pathname;
     if (path.includes("blackink")) {
         document.title = "Irfan Anwar - Blackink on Paper";
-    } else if (path.includes("paintings")) {
+    } else if (path.includes("paintings") || path.includes("paitings")) {
         document.title = "Irfan Anwar - Canvas Paintings";
     } else if (path.includes("sketch")) {
         document.title = "Irfan Anwar - Sketches";
     } else if (path.includes("digital")) {
         document.title = "Irfan Anwar - Digital Paintings";
+    } else if (path.includes("about")) {
+        document.title = "Irfan Anwar - About";
     } else {
         document.title = "Irfan Anwar";
     }
 
-    // Header placeholder aur fetch ka code
     let placeholder = document.createElement('div');
     placeholder.id = "header-placeholder";
     document.body.prepend(placeholder);
