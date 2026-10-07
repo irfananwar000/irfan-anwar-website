@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     let isInSubfolder = window.location.pathname.includes("/paitings/");
+    // let isInSubfolder = window.location.pathname.includes("/paitings/") || window.location.pathname.includes("/paintings/") || window.location.pathname.includes("/digital-paintings/");
     let cssPath = isInSubfolder ? "../../style.css" : "style.css";
     let headerPath = isInSubfolder ? "../../components/main-header.html" : "components/main-header.html";
     
