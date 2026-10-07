@@ -1,0 +1,329 @@
+/* 
+body {
+    overflow: hidden; 
+}
+
+.horizontal-gallery-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 40px 150px 40px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 4px;
+        
+        &:hover {
+            background: #555;
+        }
+    }
+
+    .horizontal-track {
+        display: inline-flex;
+        gap: 50px;
+        align-items: flex-end; 
+
+        .horizontal-item {
+            display: inline-block;
+            flex-shrink: 0;
+            background: transparent;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 55vh;
+                object-fit: contain;
+                display: block;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
+            }
+
+            .painting-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-top: 15px;
+                font-family: 'Montserrat', sans-serif;
+                white-space: normal;
+
+                .painting-main-details {
+                    .painting-title {
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #111;
+                        margin-bottom: 2px;
+                    }
+
+                    .painting-size {
+                        font-size: 0.75rem;
+                        color: #777;
+                    }
+                }
+
+                .painting-status {
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+
+                    &.available {
+                        color: #2b7a0b;
+                        background: #eaf5e6;
+                    }
+
+                    &.sold {
+                        color: #a94442;
+                        background: #fdf7f7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery-heading {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+} */
+
+
+
+
+
+
+/* Modern CSS Nesting */
+/* .masonry-gallery {
+    column-count: 4;
+    column-gap: 20px;
+
+    @media (max-width: 992px) {
+        column-count: 2;
+    }
+
+    @media (max-width: 576px) {
+        column-count: 1;
+    }
+
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+.painting-title {
+    font-family: 'Montserrat', sans-serif;
+} */
+
+
+
+
+
+/* Gallery Heading Style */
+.gallery-heading {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Uniform Height Gallery Rows Layout */
+.gallery-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+
+    .gallery-row-item {
+        height: 340px;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .img-box {
+            height: 260px;
+            width: auto;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: auto;
+                max-width: none;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        .painting-info {
+            padding: 10px 0px;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            flex-grow: 1;
+
+            .painting-main-details {
+                .painting-title {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: #111;
+                    margin-bottom: 2px;
+                }
+
+                .painting-size {
+                    font-size: 0.75rem;
+                    color: #777;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .painting-status {
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 2px 6px;
+                border-radius: 3px;
+
+                &.available {
+                    color: #2b7a0b;
+                    background: #eaf5e6;
+                }
+
+                &.sold {
+                    color: #a94442;
+                    background: #fdf7f7;
+                }
+            }
+        }
+    }
+}
+
+/* Modern Fullscreen Lightbox Modal Styles */
+.painting-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    &.active {
+        display: flex;
+    }
+
+    .close-modal {
+        position: fixed;
+        top: 25px;
+        right: 35px;
+        font-size: 36px;
+        cursor: pointer;
+        color: #fff;
+        z-index: 100000;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, transform 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+    }
+
+    .modal-content-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        box-sizing: border-box;
+
+        .modal-img-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 90vw;
+                max-height: 90vh;
+                object-fit: contain;
+                display: block;
+                border-radius: 4px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+
+/* Mobile Responsive Fixes (Without changing desktop view) */
+@media (max-width: 768px) {
+    .gallery-row-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .gallery-row-container .gallery-row-item {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .gallery-row-container .gallery-row-item .img-box {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .gallery-row-container .gallery-row-item .img-box img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}

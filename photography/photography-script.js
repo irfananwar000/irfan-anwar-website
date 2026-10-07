@@ -1,22 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const slider = document.querySelector(".horizontal-gallery-container");
-
-//     if (slider) {
-//         slider.addEventListener("wheel", function (evt) {
-//             evt.preventDefault();
-            
-//             slider.scrollBy({
-//                 left: evt.deltaY * 1.5, 
-//                 behavior: 'smooth'
-//             });
-//         }, { passive: false });
-//     }
-// });
-
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", function () {

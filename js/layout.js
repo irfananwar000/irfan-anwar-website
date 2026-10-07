@@ -60,3 +60,23 @@ document.addEventListener("DOMContentLoaded", function () {
     bsScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js";
     document.body.appendChild(bsScript);
 });
+
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    return false;
+}, false);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+        e.preventDefault();
+        return false;
+    }
+    if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+        return false;
+    }
+}); 
